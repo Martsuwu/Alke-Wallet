@@ -1,0 +1,266 @@
+/* =========================
+   Estilos generales
+========================= */
+
+body {
+    position: relative;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Degradé negro a blanco */
+    background: linear-gradient(135deg, #ffffff, #000000);
+}
+
+
+/* =========================
+   Card Login
+========================= */
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+.card h3 {
+    font-weight: 600;
+    color: #000000;
+}
+
+/* =========================
+   Inputs
+========================= */
+
+.form-control {
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #000000;
+}
+
+/* =========================
+   Botón
+========================= */
+
+.btn-primary {
+    background-color: #000405;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #000000;
+}
+
+/* =========================
+   Mensaje de error
+========================= */
+
+#errorMsg {
+    font-size: 0.9rem;
+}
+
+/* PANEL IZQUIERDO */
+.left-panel {
+    background: transparent;
+}
+
+
+/* IMAGEN */
+.wallet-img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+}
+
+.image-text {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 30px;
+    max-width: 80%;
+}
+
+.image-text h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.image-text p {
+    font-size: 1.1rem;
+    color: #222;
+}
+
+/* CARD LOGIN */
+.title-card {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 380px;
+}
+
+.title-card h2 {
+    margin: 0;
+    font-weight: 1000;
+    letter-spacing: 3px;
+}
+
+/* IMAGEN SUPERIOR IZQUIERDA */
+.top-left-img {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    width: 200px;
+    height: auto;
+    z-index: 10;
+}
+/* CARD LOGIN GRANDE */
+.login-card {
+    width: 100%;
+    max-width: 480px;   /* aquí se agranda */
+    padding: 30px;      /* más espacio interno */
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 18px;
+    border: none;
+}
+
+/* INPUTS MÁS GRANDES */
+.login-card .form-control {
+    padding: 14px;
+    font-size: 1.05rem;
+}
+
+/* BOTÓN MÁS GRANDE */
+.login-card .btn-primary {
+    padding: 14px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+/* LINK CREAR CUENTA */
+.create-account-link {
+    color: #000000;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.create-account-link:hover {
+    text-decoration: underline;
+}
+
+.login-card {
+    max-width: 420px;
+    width: 100%;
+}
+/* FONDO GENERAL */
+.wallet-bg {
+    background: linear-gradient(135deg, #e5e5e5, #8c8c8c);
+    min-height: 100vh;
+}
+
+
+/* PANEL PRINCIPAL (AMBOS) */
+.wallet-panel {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 40px;
+
+    width: 100%;
+    max-width: 520px;     
+    min-height: 450px;    
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* CAJAS INTERNAS */
+.wallet-box {
+    background: #111;    
+    color: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+
+/* BOTONES */
+.wallet-btn {
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 12px;
+    font-weight: 500;
+}
+
+.wallet-btn:hover {
+    background: #111;
+}
+
+/* NAVBAR */
+.btn-dark-outline {
+    background: #808080;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px 20px;
+}
+
+.btn-dark-outline:hover {
+    background: #878787;
+}
+
+/* Historial clickeable */
+.wallet-clickable {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wallet-clickable:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.wallet-box .text-muted {
+    color: #bdbdbd !important;
+}
+
+.wallet-bg {
+    background: linear-gradient(to left, #ffffff, #000000);
+    min-height: 100vh;
+}
+/* PANEL DERECHO OSCURO */
+.wallet-panel-dark {
+    background: #000000;
+}
+.wallet-panel-dark .wallet-box {
+    background: #111;
+    color: #ffffff;
+}
+.wallet-panel-dark .text-muted {
+    color: #bdbdbd !important;
+}
+/* PANEL DERECHO CON SCROLL */
+.wallet-panel-dark {
+    background: #000000;
+    max-height: 600px;          
+    overflow: hidden;          
+}
+#contactsList {
+    overflow-y: auto;
+    max-height: 350px;          /* zona de scroll */
+    padding-right: 5px;
+}
