@@ -51,6 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         transactionsList.appendChild(div);
     });
+
+    // Animar lista
+    animarLista("transactionsList");
 });
 
 // Estilos por tipo de transacción

@@ -17,7 +17,7 @@ function protegerAcceso() {
 function obtenerUsuario() {
     const user = JSON.parse(localStorage.getItem("user"));
     if (!user) {
-        location.assign("index.html");
+        console.error("Usuario no encontrado en localStorage");
         return null;
     }
     return user;
