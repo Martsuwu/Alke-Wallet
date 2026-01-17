@@ -2,40 +2,50 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Depósito | Alke Wallet</title>
+    <title>Operaciones | Alke Wallet</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-light">
+<body class="bg-black text-white">
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
+<div class="container vh-100 d-flex align-items-center justify-content-center">
+    <div class="card bg-dark text-white p-4 shadow"
+         style="max-width: 420px; width: 100%; border-radius: 20px;">
 
-            <div class="card shadow">
-                <div class="card-body">
+        <h4 class="text-center mb-4">Depósito / Retiro</h4>
 
-                    <h4 class="text-center mb-4">Realizar Depósito</h4>
-
-                    <div class="mb-3">
-                        <label class="form-label">Monto a depositar</label>
-                        <input type="number" id="depositAmount" class="form-control" placeholder="Ej: 10000">
-                    </div>
-
-                    <button id="depositBtn" class="btn btn-dark w-100">
-                        Depositar
-                    </button>
-
-                    <div id="depositMsg" class="mt-3 text-center"></div>
-
-                </div>
-            </div>
-
+        <!-- Tipo operación -->
+        <div class="mb-3">
+            <label class="form-label">Tipo de operación</label>
+            <select id="operationType" class="form-select">
+                <option value="">Seleccione</option>
+                <option value="deposit">Depositar dinero</option>
+                <option value="withdraw">Retirar dinero</option>
+            </select>
         </div>
+
+        <!-- Monto -->
+        <div class="mb-3">
+            <label class="form-label">Monto</label>
+            <input type="number" id="amount" class="form-control" placeholder="Ej: 10000">
+        </div>
+
+        <button id="actionBtn" type="button" class="btn btn-light w-100">
+            Confirmar operación
+        </button>
+
+        <div id="msg" class="text-center mt-3"></div>
+        <hr class="my-3">
+
+        <button class="btn btn-outline-light w-100" onclick="window.location.href='menu.html'">
+            Volver al menú
+        </button>
+
+
     </div>
 </div>
 
-<script src="js/deposit.js"></script>
+<script src="Js/deposito.js"></script>
 </body>
 </html>

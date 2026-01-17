@@ -14,9 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    /* =========================
-       DATOS PERSONALES
-    ========================= */
 
     // Navbar
     if (document.getElementById("navUser")) {
@@ -32,21 +29,29 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("userEmail").textContent = user.email;
     }
 
-    /* =========================
-       SALDO
-    ========================= */
-
     // Inicializar saldo si no existe
-    if (user.balance === undefined) {
+    if (!("balance" in user)) {
         user.balance = 100000;
         localStorage.setItem("user", JSON.stringify(user));
     }
 
-    document.getElementById("balance").textContent = user.balance;
+    // Función para actualizar el saldo 
+    function actualizarSaldo() {
+        const usuarioActual = JSON.parse(localStorage.getItem("user"));
+        if (usuarioActual && usuarioActual.balance !== undefined) {
+            document.getElementById("balance").textContent = usuarioActual.balance;
+        }
+    }
 
-    /* =========================
-       HISTORIAL
-    ========================= */
+    // Mostrar saldo inicial
+    actualizarSaldo();
+
+    // Escuchar cambios en localStorage (útil si abres múltiples pestañas)
+    window.addEventListener("storage", actualizarSaldo);
+
+    // También verificar cada vez que vuelves a esta página
+    window.addEventListener("pageshow", actualizarSaldo);
+
 
     if (!user.history) {
         user.history = [];
@@ -60,9 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* =========================
-       CONTACTOS
-    ========================= */
 
     // Inicializar contactos si no existen
     if (!user.contacts) {
@@ -108,10 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
             contactsList.appendChild(div);
         });
     }
-
-    /* =========================
-       CERRAR SESIÓN
-    ========================= */
+    // Logout
 
     const logoutButtons = document.querySelectorAll("#logoutBtn");
     logoutButtons.forEach(btn => {
