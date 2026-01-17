@@ -1,8 +1,5 @@
-// ============================
-// ANIMACIONES CON JQUERY
-// ============================
 
-// Animar mensaje de éxito/error
+// Mensaje de éxito o error
 function animarMensaje(elementId, tipo = "success") {
     const $elemento = $(`#${elementId}`);
     
@@ -19,7 +16,7 @@ function animarMensaje(elementId, tipo = "success") {
     }, 3000);
 }
 
-// Animar elementos de transacción
+// Elementos de transacción
 function animarTransaccion($elemento) {
     $elemento.hide().fadeIn(500);
     $elemento.css({
@@ -27,7 +24,7 @@ function animarTransaccion($elemento) {
     });
 }
 
-// Animar saldo
+// Saldo
 function animarSaldo(elementId) {
     const $elemento = $(`#${elementId}`);
     $elemento.addClass("animate__animated animate__pulse");
@@ -37,7 +34,7 @@ function animarSaldo(elementId) {
     }, 1000);
 }
 
-// Animar botón al hacer clic
+// Botón al hacer clic
 function animarBoton(buttonId) {
     const $boton = $(`#${buttonId}`);
     $boton.addClass("animate__animated animate__bounceIn");
@@ -47,7 +44,7 @@ function animarBoton(buttonId) {
     }, 600);
 }
 
-// Animar formulario
+// Formulario
 function animarFormulario(formId) {
     const $formulario = $(`#${formId}`);
     $formulario.find("input, select, textarea").each(function(index) {
@@ -55,7 +52,7 @@ function animarFormulario(formId) {
     });
 }
 
-// Animar lista de transacciones
+// Lista de transacciones
 function animarLista(contenedorId) {
     const $contenedor = $(`#${contenedorId}`);
     $contenedor.find(".transaction-item").each(function(index) {
@@ -63,7 +60,7 @@ function animarLista(contenedorId) {
     });
 }
 
-// Efecto hover en tarjetas
+// Efecto 
 function efectoHoverTarjetas() {
     $(".wallet-box").hover(
         function() {
@@ -75,13 +72,13 @@ function efectoHoverTarjetas() {
     );
 }
 
-// Animar carga de página
+// Carga de página
 function animarCargaPagina() {
     $("body").fadeIn(300);
     $(".container").addClass("animate__animated animate__fadeInUp");
 }
 
-// Animar desaparición
+// Desaparición
 function animarDesaparicion(elementId, callback) {
     const $elemento = $(`#${elementId}`);
     $elemento.addClass("animate__animated animate__fadeOutDown");
@@ -92,7 +89,7 @@ function animarDesaparicion(elementId, callback) {
     }, 500);
 }
 
-// Animar modal/alert
+// Alerta animada
 function animarAlerta(mensaje, tipo = "info") {
     const icono = tipo === "success" ? "✓" : tipo === "error" ? "✕" : "ℹ";
     const clase = `alert-${tipo === "success" ? "success" : tipo === "error" ? "danger" : "info"}`;

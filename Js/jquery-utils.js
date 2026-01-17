@@ -1,7 +1,3 @@
-// ============================
-// UTILIDADES JQUERY
-// ============================
-
 // Validar campos en tiempo real
 $.fn.validarEnTiempoReal = function(validador) {
     return this.on("blur change", function() {
@@ -43,7 +39,7 @@ $.fn.ocultarError = function() {
     $elemento.next(".invalid-feedback").hide();
 };
 
-// Deshabilitar/Habilitar con animación
+// Deshabilitar o habilitar 
 $.fn.deshabilitarConAnimacion = function() {
     return this.fadeOut(200, function() {
         $(this).prop("disabled", true).fadeIn(200);
@@ -83,7 +79,7 @@ const validacionesJquery = {
     }
 };
 
-// Inicializar validaciones en formularios
+// Validaciones en formularios
 function inicializarValidaciones() {
     $("[data-validar]").each(function() {
         const $input = $(this);
@@ -95,7 +91,7 @@ function inicializarValidaciones() {
     });
 }
 
-// Animar entrada de datos
+// Entrada de datos
 function animarEntrada($elemento) {
     $elemento.addClass("animate__animated animate__fadeInUp");
     setTimeout(() => {

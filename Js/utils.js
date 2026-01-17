@@ -1,7 +1,4 @@
 // ============================
-// FUNCIONES DE SEGURIDAD
-// ============================
-
 function protegerAcceso() {
     if (localStorage.getItem("loggedIn") !== "true") {
         location.assign("index.html");
@@ -9,10 +6,6 @@ function protegerAcceso() {
     }
     return true;
 }
-
-// ============================
-// FUNCIONES DE USUARIO
-// ============================
 
 function obtenerUsuario() {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -50,9 +43,6 @@ function actualizarBalance(elementId) {
         }
     }
 }
-
-// ============================
-// VALIDACIONES
 // ============================
 
 function validarEmail(email) {
@@ -72,8 +62,6 @@ function validarOperacion(operacion) {
 }
 
 // ============================
-// FUNCIONES DE TRANSACCIONES
-// ============================
 
 function agregarAlHistorial(user, tipo, monto, detalles = {}) {
     if (!user.history) user.history = [];
@@ -89,8 +77,6 @@ function agregarAlHistorial(user, tipo, monto, detalles = {}) {
     return user;
 }
 
-// ============================
-// FUNCIONES DE UI
 // ============================
 
 function mostrarMensaje(elementId, mensaje, tipo = "danger") {
