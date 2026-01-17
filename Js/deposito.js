@@ -1,19 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
+    if (!protegerAcceso()) return;
 
-    if (localStorage.getItem("loggedIn") !== "true") {
-        location.assign("index.html");
-        return;
-    }
+    const user = obtenerUsuario();
+    if (!user) return;
 
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    if (!user) {
-        location.assign("index.html");
-        return;
-    }
-
-    if (!("balance" in user)) user.balance = 100000;
-    if (!user.history) user.history = [];
+    inicializarBalance(user);
+    inicializarHistorial(user);
+    guardarUsuario(user);
 
     const operationType = document.getElementById("operationType");
     const amountInput = document.getElementById("amount");
@@ -24,48 +18,40 @@ document.addEventListener("DOMContentLoaded", () => {
         const type = operationType.value;
         const amount = Number(amountInput.value);
 
-        if (!type) {
-            msg.innerHTML = `<span class="text-danger">Seleccione una operación</span>`;
+        // Validaciones
+        if (!validarOperacion(type)) {
+            mostrarMensaje("msg", "Seleccione una operación", "danger");
             return;
         }
 
-        if (isNaN(amount) || amount <= 0) {
-            msg.innerHTML = `<span class="text-danger">Monto inválido</span>`;
+        if (!validarMonto(amount)) {
+            mostrarMensaje("msg", "Monto inválido", "danger");
             return;
         }
 
+        // Procesar depósito
         if (type === "deposit") {
             user.balance += amount;
-
-            user.history.push({
-                type: "Depósito",
-                amount,
-                date: new Date().toLocaleString()
-            });
+            user = agregarAlHistorial(user, "Depósito", amount);
         }
 
+        // Procesar retiro
         if (type === "withdraw") {
             if (amount > user.balance) {
-                msg.innerHTML = `<span class="text-danger">Saldo insuficiente</span>`;
+                mostrarMensaje("msg", "Saldo insuficiente", "danger");
                 return;
             }
-
             user.balance -= amount;
-
-            user.history.push({
-                type: "Retiro",
-                amount,
-                date: new Date().toLocaleString()
-            });
+            user = agregarAlHistorial(user, "Retiro", amount);
         }
 
-        // 🔴 ESTA LÍNEA ES CLAVE
-        localStorage.setItem("user", JSON.stringify(user));
+        // Guardar cambios
+        guardarUsuario(user);
 
-        msg.innerHTML = `<span class="text-success">Operación exitosa</span>`;
+        mostrarMensaje("msg", "Operación exitosa", "success");
+        limpiarFormulario(operationType, amountInput);
 
-        setTimeout(() => {
-            location.assign("menu.html");
-        }, 500);
+        // Redirigir
+        redirigir("menu.html", 500);
     });
 });

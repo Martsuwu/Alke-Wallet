@@ -1,0 +1,209 @@
+/* ============================
+   VARIABLES Y COLORES
+   ============================ */
+
+:root {
+    --primary: #007bff;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ffc107;
+    --dark-bg: #0d0d0d;
+    --card-bg: #1a1a1a;
+    --border-color: #333;
+}
+
+/* ============================
+   TRANSACCIONES
+   ============================ */
+
+.transaction-item {
+    background: #2a2a2a;
+    border-left: 4px solid var(--primary);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+}
+
+.transaction-item:hover {
+    transform: translateX(5px);
+}
+
+.transaction-deposit {
+    border-left-color: var(--success);
+}
+
+.transaction-withdraw {
+    border-left-color: var(--danger);
+}
+
+.transaction-transfer {
+    border-left-color: var(--warning);
+}
+
+.transaction-amount {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.amount-positive {
+    color: var(--success);
+}
+
+.amount-negative {
+    color: var(--danger);
+}
+
+/* ============================
+   FORMULARIOS
+   ============================ */
+
+.form-control,
+.form-select {
+    background-color: #2a2a2a !important;
+    color: #fff !important;
+    border-color: #444 !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #333 !important;
+    color: #fff !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-label {
+    color: #ccc;
+    font-weight: 500;
+}
+
+/* ============================
+   TARJETAS Y PANELES
+   ============================ */
+
+.card {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.wallet-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.wallet-panel-dark {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+}
+
+.wallet-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.wallet-clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wallet-clickable:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* ============================
+   BOTONES
+   ============================ */
+
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* ============================
+   NAVEGACIÓN
+   ============================ */
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary) !important;
+}
+
+/* ============================
+   MENSAJES
+   ============================ */
+
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+.text-danger {
+    color: var(--danger) !important;
+}
+
+.text-success {
+    color: var(--success) !important;
+}
+
+.text-warning {
+    color: var(--warning) !important;
+}
+
+/* ============================
+   BACKGROUNDS
+   ============================ */
+
+.bg-black {
+    background-color: var(--dark-bg);
+}
+
+.wallet-bg {
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+    min-height: 100vh;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 768px) {
+    .wallet-panel {
+        padding: 15px;
+    }
+    
+    .transaction-item {
+        padding: 12px;
+    }
+}

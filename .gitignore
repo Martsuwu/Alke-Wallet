@@ -1,0 +1,85 @@
+# Archivos del sistema operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Dependencias
+dist/
+build/
+
+# IDE y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs
+logs
+*.log
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Archivos temporales
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Caché
+.cache/
+.eslintcache
+
+# Bases de datos locales
+*.db
+*.sqlite
+*.sqlite3
+
+# Testing
+coverage/
+.nyc_output/
+
+# Compilados
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Comprimidos
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# Archivos de backup
+*.bak
+*.backup
+*~
+
+# Configuración personal
+config.local.js
+settings.local.json

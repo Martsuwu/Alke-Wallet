@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Operaciones | Alke Wallet</title>
+    <title>Transferencia | Alke Wallet</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/global.css">
@@ -14,16 +14,18 @@
     <div class="card bg-dark text-white p-4 shadow"
          style="max-width: 420px; width: 100%; border-radius: 20px;">
 
-        <h4 class="text-center mb-4">Depósito / Retiro</h4>
+        <h4 class="text-center mb-4">Transferencia</h4>
 
-        <!-- Tipo operación -->
+        <!-- Nombre del destinatario -->
         <div class="mb-3">
-            <label class="form-label">Tipo de operación</label>
-            <select id="operationType" class="form-select">
-                <option value="">Seleccione</option>
-                <option value="deposit">Depositar dinero</option>
-                <option value="withdraw">Retirar dinero</option>
-            </select>
+            <label class="form-label">Nombre del destinatario</label>
+            <input type="text" id="recipientName" class="form-control" placeholder="Ej: Juan Pérez">
+        </div>
+
+        <!-- Correo del destinatario -->
+        <div class="mb-3">
+            <label class="form-label">Correo del destinatario</label>
+            <input type="email" id="recipientEmail" class="form-control" placeholder="Ej: juan@example.com">
         </div>
 
         <!-- Monto -->
@@ -32,8 +34,13 @@
             <input type="number" id="amount" class="form-control" placeholder="Ej: 10000">
         </div>
 
-        <button id="actionBtn" type="button" class="btn btn-light w-100">
-            Confirmar operación
+        <!-- Saldo disponible -->
+        <div class="mb-3 p-2 bg-secondary rounded">
+            <small>Saldo disponible: $<span id="balanceAvailable">0</span></small>
+        </div>
+
+        <button id="transferBtn" type="button" class="btn btn-light w-100">
+            Realizar transferencia
         </button>
 
         <div id="msg" class="text-center mt-3"></div>
@@ -43,11 +50,10 @@
             Volver al menú
         </button>
 
-
     </div>
 </div>
 
 <script src="Js/utils.js"></script>
-<script src="Js/deposito.js"></script>
+<script src="Js/sendmoney.js"></script>
 </body>
 </html>
